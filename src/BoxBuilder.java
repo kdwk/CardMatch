@@ -5,12 +5,23 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
+/**
+ * A class to allow building a JPanel with BoxLayout using the Builder Pattern
+ * @see <a href="https://en.wikipedia.org/wiki/Builder_pattern">Builder Pattern</a>
+ */
 public class BoxBuilder {
 
     private JPanel panel = new JPanel();
-
+    
+    /**
+     * Construct a new BoxBuilder
+     */
     public BoxBuilder() {}
-
+    
+    /**
+     * Construct a new BoxBuilder and register it in the global Components registry
+     * @param id
+     */
     public BoxBuilder(String id) {Components.reg(id, this.panel);}
 
     public BoxBuilder add(String id, Component component) {
